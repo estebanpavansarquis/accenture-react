@@ -1,0 +1,103 @@
+Componente : Una funcion en mayuscula que compila a un nodo. Para eso siempre tiene que estar la variable React en scope. Todos los componentes retornan algo : String - React.Component - NodeElement 
+
+function App(){}
+
+let App = () => {}
+
+class App {}
+
+{""|''} ó `` 
+
+let nombre = "Horacio"
+let mensaje = `Soy ${nombre}`
+
+
+src/
+    |_api/ 
+    |_ui/
+        |_layout/
+            |_ App.js
+            |_ Header.js
+            |_ Footer.js
+            |_ Main.js
+        |_paginas/
+        |_widgets/ 
+
+
+Un componente de tipo class puede mantener su propio estado(state) y cualquier componente puede recibir parametros desde otro componente(props). Ambos dos son de solo lectura. Puedo cambiar el estado de un componente pero NO POR ASIGNACION DE VARIABLE, es decir : 
+
+let state = 1
+state = 2 // NOOOOO
+
+Los props son obligatoriamente de solo lectura, nunca se pueden modificar.  El state de un componente SOLO puede ser modificado por ESE MISMO componente. Si el state o los props cambian, la función render del componente (o en defecto su return) se tiene que volver a ejecutar. Los props y state solo pueden ser pasados de un componente padre a un componente hijo sin obviar ninguna jerarquia. 
+
+
+function foo(a){}
+foo(1)  === <foo a=1 />
+
+Los props que le pasamos a un componente pueden valer tres cosas : un String - un Boolean(defaul|sin valor) o una expresión de JS
+
+<foo  a />
+<foo  a="hola mundo" />
+<foo  a={1+1} />
+
+
+MODIFICAR EL STATE : Se usa una función asincrónica que sale de this
+
+this.setState({ contador : this.state.contador + 1 })
+
+
+
+
+
+
+
+https://docs.emmet.io/cheat-sheet/
+
+
+
+
+class App extends Component {
+    constructor(){
+        super()
+
+    }
+...
+
+
+function App(){
+    Component.call(this,...params)
+}
+App.prototype = Object.create(Component.prototype)
+App.prototype.constructor = App
+
+
+ECMA 
+
+ECMAscript 
+
+//Primitivas : String - Number - Boolean
+let a = 1
+let a = "1"
+let a = true
+
+//Objeto : Object - Array - Function 
+let obj = { a : 1 }
+obj.b = 2
+obj["c"] = 3
+
+{a:1,b:2,c:3}
+
+
+
+Array.map() => Array - Retorna un array de la misma longitud del array saliente
+
+Array.map((e,i,arr)=>{
+    return ?
+})
+
+[1,2,3].map((e,i)=>{
+    return e + 1
+})
+
+Array.filter() => Array - Retorna un array de igual o menor longitur del array saliente
