@@ -3,6 +3,7 @@ import ListadoUsuarios from "./ListadoUsuarios"
 import { connect } from "react-redux"
 import { mostrarFormulario , handleChange , handleSubmit } from "../../api/actions"
 import {bindActionCreators} from "redux"
+import Button from '@material-ui/core/Button'
 
 class Formulario extends Component {
 
@@ -15,11 +16,11 @@ class Formulario extends Component {
                     <div>
                         <input value={usuario} onChange={handleChange} type="text" placeholder="Usuario"/>
                     </div>
-                    <button>Enviar!</button>
+                    <Button>Enviar!</Button>
                 </form>
                 :null}
                 
-                <button onClick={mostrarFormulario}> { mostrar ? 'Hide form' : 'Show form'} </button>
+                <Button onClick={mostrarFormulario}> { mostrar ? 'Hide form' : 'Show form'} </Button>
                 <ListadoUsuarios/>
             </Fragment>
         )

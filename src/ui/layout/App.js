@@ -5,7 +5,6 @@ import Main from "./Main"
 import Formulario from "../widgets/Formulario"
 import Contador from "../widgets/Contador"
 
-
 class App extends Component {
     render(){
         return (
@@ -14,8 +13,8 @@ class App extends Component {
                 <Contador/>
                 <Formulario /> 
                 <Main/>
-                <Footer/>
-            </Fragment>            
+                <Footer/>  
+            </Fragment>
         )
     }
 }

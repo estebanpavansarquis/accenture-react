@@ -2,17 +2,17 @@ import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { sumarContador , restarContador , resetearContador } from '../../api/actions'
 import { bindActionCreators } from 'redux'
-import  Button  from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 
 class Contador extends React.Component{
     render(){
-        let {Button,contador,sumarContador,resetearContador,restarContador} = this.props
+        let {contador,sumarContador,resetearContador,restarContador} = this.props
         return(
             <Fragment>
                 <p>Contador : { contador }</p>
-                <button onClick={ sumarContador }>+</button>
-                <button onClick={ restarContador }>-</button>
-                <button onClick={ resetearContador }>Reset</button>
+                <Button onClick={ sumarContador }>+</Button>
+                <Button onClick={ restarContador }>-</Button>
+                <Button onClick={ resetearContador }>Reset</Button>
             </Fragment>
         )
     }

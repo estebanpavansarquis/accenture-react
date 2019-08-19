@@ -3,6 +3,8 @@ import Usuario from "./Usuario"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import { pedirUsuarios, updateUser, deleteUser } from "../../api/actions"
+import Button from '@material-ui/core/Button'
+
 
 class ListadoUsuarios extends Component {
     render(){
@@ -11,19 +13,19 @@ class ListadoUsuarios extends Component {
         <Fragment>
             <ul>
             {!usuarios.length
-            ? <li >No hay usuarios</li>
-            : usuarios.map((e,i)=>
-            <div key={`usr${i}`} >
-                <Usuario usuario={e}/>
-                <button  onClick={ () => deleteUser(i) } > X </button>
-                <button  onClick={ () => updateUser(i) } > Editar </button>
-            </div>    
+                ? <li> No hay usuarios </li>
+                : usuarios.map((e,i)=>
+                    <div key={`usr${i}`} >
+                        <Usuario usuario={e}/>
+                        <Button  onClick={ () => deleteUser(i) } > X </Button>
+                        <Button  onClick={ () => updateUser(i) } > Editar </Button>
+                    </div>   
             )}
             </ul>
-            <button key={'btn_get'} onClick={ () => {
+            <Button key={'btn_get'} onClick={ () => {
                 if(usuarios_fetched || usuarios_fetching) return;
                 pedirUsuarios()
-            }} > Get more users </button>
+            }} > Get more users </Button>
         </Fragment>
         )
     }
