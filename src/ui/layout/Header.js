@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux" 
 
-export default class Header extends Component {
+class Header extends Component {
     render() {
-        console.log(this)
         return (
             <header>
                 <h1>SPA</h1>
                 <nav>
-                {this.props.links.map(e=><a key={e} href="#">{e}</a>)}
+                {this.props.links.map(e=>
+                    <a key={e} href="#">{e}</a>
+                )}
                 </nav>
             </header>
         )
     }
 }
+
+export default connect(store=>({
+    links : store.links
+}),null)(Header)
