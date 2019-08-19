@@ -23,7 +23,7 @@ class ListadoUsuarios extends Component {
             <button key={'btn_get'} onClick={ () => {
                 if(usuarios_fetched || usuarios_fetching) return;
                 pedirUsuarios()
-            }} > Buscar usuarios </button>
+            }} > Get more users </button>
         </Fragment>
         )
     }

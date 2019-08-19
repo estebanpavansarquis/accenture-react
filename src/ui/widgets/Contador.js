@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { connect } from "react-redux"
 import { sumarContador , restarContador , resetearContador } from "../../api/actions"
 import { bindActionCreators } from "redux"
@@ -7,13 +7,12 @@ class Contador extends React.Component{
     render(){
         let {contador,sumarContador,resetearContador,restarContador} = this.props
         return(
-            <React.Fragment>
+            <Fragment>
                 <p>Contador : { contador }</p>
                 <button onClick={ sumarContador }>+</button>
                 <button onClick={ restarContador }>-</button>
-                <button onClick={ resetearContador }>resetear</button>
-
-            </React.Fragment>
+                <button onClick={ resetearContador }>Reset</button>
+            </Fragment>
         )
     }
 }

@@ -19,7 +19,7 @@ class Formulario extends Component {
                 </form>
                 :null}
                 
-                <button onClick={mostrarFormulario}>Mostrar</button>
+                <button onClick={mostrarFormulario}> { mostrar ? 'Hide form' : 'Show form'} </button>
                 <ListadoUsuarios/>
             </Fragment>
         )
