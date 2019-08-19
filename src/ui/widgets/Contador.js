@@ -1,11 +1,12 @@
-import React, { Fragment } from "react"
-import { connect } from "react-redux"
-import { sumarContador , restarContador , resetearContador } from "../../api/actions"
-import { bindActionCreators } from "redux"
+import React, { Fragment } from 'react'
+import { connect } from 'react-redux'
+import { sumarContador , restarContador , resetearContador } from '../../api/actions'
+import { bindActionCreators } from 'redux'
+import  Button  from '@material-ui/core/Button'
 
 class Contador extends React.Component{
     render(){
-        let {contador,sumarContador,resetearContador,restarContador} = this.props
+        let {Button,contador,sumarContador,resetearContador,restarContador} = this.props
         return(
             <Fragment>
                 <p>Contador : { contador }</p>
